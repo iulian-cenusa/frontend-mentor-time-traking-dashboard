@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: hsl(226, 43%, 10%);
+}
+
+main,footer{
+    width: 375px;
+    padding: 1em;
+}
+
+main{
+    display: grid;
+    grid-template-areas:
+    "header"
+    "work"
+    "play"
+    "study"
+    "exercise"
+    "social"
+    "selfcare"
+    ;
+    gap: 1.5em;
+}
+
+#header{
+    grid-area: header;
+}
+
+.container{
+    background-color: hsl(235, 46%, 20%);
+    border-radius: 15px;
+}
+
+.report{
+    background-color: hsl(246, 80%, 60%);
+    border-radius: 15px;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.report img{
+    width: 30%;
+    height: 30%;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+.report-desc{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin: 0 1em;
+}
+
+.report-desc p{
+    font-size: 0.8em;
+    font-weight: 300;
+    color: hsl(236, 100%, 87%);
+}
+
+h1{
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+.flex-row , .flex-column{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9em;
+}
+
+.normal, .active {
+    padding: 1.5rem;
+    font-size: 1.2em;
+    color: hsl(235, 45%, 61%);
+}
+
+.active{
+    color: white;
+}
+
+#daily:hover , #weekly:hover , #monthly:hover{
+    cursor: pointer;
+    color: white;
+}
+
+#work, #play, #study, #exercise, #social, #self-care{
+    background-repeat: no-repeat;
+    background-position: 240px -10px ;
+    border-radius: 15px;
+    min-height: 100px;
+    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#work .container:hover, #play .container:hover, #study .container:hover, #exercise .container:hover, #social .container:hover, #self-care .container:hover{
+    cursor: pointer;
+    background-color:  hsl(235, 45%, 61%);
+}
+
+.title, .elipsis{
+    padding: 1.5rem 1.5rem 0.25rem 1.5rem;
+    font-weight: 500;
+}
+
+.hours , .last-hours{
+    padding: 0.25rem 1.5rem 1.5rem 1.5rem;
+    font-weight: 300;
+}
+
+.elipsis:hover{
+    cursor: pointer;
+}
+
+.hours{
+    font-size: 2em;
+}
+
+.last-hours{
+    font-size: 0.9em;
+    color: hsl(236, 100%, 87%);
+}
+
+#work{
+    background-color: hsl(15, 100%, 70%);
+    background-image: url(./images/icon-work.svg);
+    grid-area: work;
+}
+#play{
+    background-color: hsl(195, 74%, 62%);
+    background-image: url(./images/icon-play.svg);
+    grid-area: play;
+} 
+#study{
+    background-color: hsl(348, 100%, 68%);
+    background-image: url(./images/icon-study.svg);
+    grid-area: study;
+} 
+#exercise{
+    background-color: hsl(145, 58%, 55%);
+    background-image: url(./images/icon-exercise.svg);
+    grid-area: exercise;
+} 
+#social{
+    background-color: hsl(264, 64%, 52%);
+    background-image: url(./images/icon-social.svg);
+    grid-area: social;
+} 
+#self-care{
+    background-color: hsl(43, 84%, 65%);
+    background-image: url(./images/icon-self-care.svg);
+    grid-area: selfcare;
+}
+
+@media (min-width: 1250px){
+
+    main,footer{
+        width: 1125px;
+        padding: 1em;
+    }
+
+    main{
+        grid-template-areas:
+        "header work play study"
+        "header exercise social selfcare";
+    }
+
+    .report{
+        background-color: hsl(246, 80%, 60%);
+        height: 60%;
+        border-radius: 15px;
+        padding: 1.5em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .flex-column{
+        flex-direction: column;
+        align-items: left;
+    }
+
+    #work, #play, #study, #exercise, #social, #self-care, #header{
+        width: 250px;
+    }
+
+    #header{
+        height: 400px;
+    }
+
+}
